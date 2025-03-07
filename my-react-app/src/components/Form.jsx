@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'; 
 import { loginSuccess } from '../redux/actions/authActions';
 import { useNavigate } from 'react-router-dom';
-import { isValidEmail, isValidPassword } from '../utils/Validation'; 
 import '../css/main.css';
 import { API_BASE_URL } from "../api/apiConfig";
 
@@ -16,17 +15,6 @@ function Form() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!isValidEmail(email)) {
-      alert('Veuillez entrer une adresse email valide.');
-      return;
-    }
-
-    if (!isValidPassword(password)) {
-      alert('Veuillez entrer un mot de passe valide');
-      return;
-    }
-
     try {
       const response = await fetch(`${API_BASE_URL}/user/login`, {
         method: 'POST',

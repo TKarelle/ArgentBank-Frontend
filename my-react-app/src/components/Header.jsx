@@ -55,8 +55,8 @@ function Header() {
         {token ? (
           <>
             <div className='user-button'>
-              <Link to="/user" style={{ textDecoration: 'none' }}><span className="main-nav-item">{user.firstName}</span>  </Link>
-              <button className="user"> <User/></button>
+              <span className="main-nav-item">{user.firstName}</span> 
+              <Link to="/user" style={{ textDecoration: 'none' }}><button className="user"> <User/></button> </Link>
             </div>
             
             <button className="parametre"> <Settings size={30}/></button>
