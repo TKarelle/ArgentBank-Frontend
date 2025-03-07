@@ -14,7 +14,7 @@ function Edit({ onClose }) {
 
   useEffect(() => {
     if (user) {
-      setUsername(user.userName); 
+      setUsername(user.username); 
     }
   }, [user]);
 
